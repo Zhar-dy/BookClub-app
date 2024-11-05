@@ -20,15 +20,15 @@ class UserSeeder extends Seeder
 
         // create roles and assign existing permissions
         $role1 = Role::create(['name' => 'customer']);
-        $role1->givePermissionTo('category-show');
+        $role1->givePermissionTo('user_show');
         // $role1->givePermissionTo('delete articles');
 
         $role2 = Role::create(['name' => 'admin']);
         $role2->givePermissionTo([
-            'category-create',
-            'category-edit',
-            'category-delete',
-            'category-show'
+            'role_create',
+            'role_edit',
+            'role_delete',
+            'role_show'
         ]);
 
         // create demo users

@@ -32,7 +32,7 @@ class PermissionSeeder extends Seeder
 
         foreach ($models as $model) {
             foreach ($permissions as $permission) {
-                Permission::updateOrCreate(['name' => $model . '-' . $permission]);
+                Permission::updateOrCreate(['name' => $model . '_' . $permission]);
             }
         }
     }
