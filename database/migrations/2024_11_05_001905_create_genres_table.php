@@ -11,11 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('meetings', function (Blueprint $table) {
+        Schema::create('genres', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('book_id')->nullable()->constrained('books')->onDelete('cascade');
-            $table->date('meeting_date')->nullable();
-            $table->string('agenda')->nullable();
+            $table->string('name')->nullable();
+            $table->string('attachment')->nullable();
             $table->timestamps();
         });
     }
@@ -25,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('meetings');
+        Schema::dropIfExists('genres');
     }
 };
