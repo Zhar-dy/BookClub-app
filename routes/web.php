@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\GenreController;
 use App\Http\Controllers\PermissionController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RoleController;
@@ -24,3 +25,6 @@ Route::put('role/update/{id}',[RoleController::class, 'update'])->name('roles.up
 Route::get('permission',[PermissionController::class, 'index'])->name('permission.index');
 Route::get('permission/create',[PermissionController::class, 'create'])->name('permission.create');
 Route::post('permission',[PermissionController::class, 'store'])->name('permission.store');
+
+//Genre Controller
+Route::resource('genre', GenreController::class);
